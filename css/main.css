@@ -12,6 +12,7 @@
 :root{
     --color-background: #fffdf7;
     --color-black: #212121;
+    --color-black-heavy:#000;
     --color-text: #4f4f4f;
     --color-text-out: #90908e;
     --color-primary: #ffbf00;
@@ -30,6 +31,10 @@ html, body{
 
 b{
     font-family: 'PoppinsMedium', 'Rubik', 'sans-serif' ;
+}
+
+.hiden{
+    display: none!important;    
 }
 
 a.navbar-brand {
@@ -71,10 +76,9 @@ a.navbar-brand {
 
 }
 
-.btn-white:hover{
+.btn-white.active, .btn-white:hover{
     background-color: var(--color-primary);
 }
-
 
 .color-primary{
     color: var(--color-primary);
@@ -227,3 +231,200 @@ a.navbar-brand {
     height: 500px;
     background-image: url(../img/bg-icons-2.png);
 }
+
+.cardapio{
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.background-cardapio{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(../img/bg-icons-1.png);
+}
+    
+
+.card-item{
+    height: 360px;
+}
+
+.card-item .img-produto img{
+    width: 100%;
+    border-radius: 11px;
+}
+
+.card-item .title-produto{
+    color: var(--color-black);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 0px;
+}
+
+.card-item .price-produto{
+    color: var(--color-primary);
+    font-size: 24px;
+}
+
+.container-menu{
+    margin-bottom: 40px;
+}
+
+.card-item .add-carrinho{
+    display: none;
+    text-align: center;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-menos{
+    color:var(--color-black-heavy);
+    padding: 5px 7px;
+    border: 2px solid var(--color-black-heavy);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-mais{
+    color:var(--color-black-heavy);
+    padding: 5px 7px;
+    border: 2px solid var(--color-black-heavy);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.add-numero-itens{
+    color: var(--color-black-heavy);
+    padding: 2px 15px;
+    border-top: 2px solid var(--color-black-heavy);
+    border-bottom: 2px solid var(--color-black-heavy);
+    font-size: 18px;
+}
+
+.btn-add{
+    border: 2px solid var(--color-black-heavy);
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-black-heavy);
+    margin-left: 15px;
+}
+
+.card-item:hover{
+    background-color: var(--color-primary);
+}
+
+.card-item:hover .title-produto{
+    display: none;
+}
+
+.card-item:hover .add-carrinho{
+    display: flex;
+}
+
+.card-item:hover .price-produto{
+    color: var(--color-black-heavy)!important;
+    margin-top: 20px;
+}
+
+.depoimentos{
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+
+.card-depoimentos{
+    height: 390px;
+    width: 390px;
+    border-radius: 120px;
+    background-color: var(--color-secundary);
+    position: absolute;
+    left: 0;
+}
+
+.container-dados-depoimento{
+    display: flex;
+}
+
+.depoimento{
+    margin-top: 70px;
+}
+
+.imagem-depoimento{
+    width: 65px;
+    height: 65px;
+    background-color: var(--color-white);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15px;
+}
+
+#depoimento-1 .imagem-depoimento{
+    background-image: url(../img/diego.jpg);
+    background-size: cover;
+}
+
+.nome-depoimento{
+    color: var(--color-black);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.nota-depoimento{
+    color: var(--color-primary);
+}
+
+.nota-depoimento span{
+    color: var(--color-black);
+}
+
+.texto-depoimento{
+    display: flex;
+    font-size: 16px;
+    color: var(--color-black);
+}
+
+.texto-depoimento i{
+    font-size: 35px;
+    color: var(--color-primary);
+}
+
+.texto-depoimento i:first-child{
+    padding-left: 10px;
+    padding-right: 35px;
+}
+
+.texto-depoimento i:last-child{
+    padding-left: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#depoimento-2 .imagem-depoimento{
+    background-image: url(../img/ana.jpg);
+    background-size: cover;
+}
+
+#depoimento-3 .imagem-depoimento{
+    background-image: url(../img/joao.jpg);
+    background-size: cover;
+}
+
+.background-depoimento{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(../img/bg-icons-1.png);
+}
+
