@@ -381,7 +381,7 @@
         </div>
     </footer>
 
-    <div class="modal-full" id="modal-carrinho">
+    <div class="modal-full hiden" id="modal-carrinho">
         <div class="m-header">
             <div class="container">
                 <a class="btn btn-white btn-sm float-right">Fechar</a>
@@ -397,7 +397,7 @@
         </div>
         <div class="m-body">
             <div class="container">
-                <div class="row mr-0 ml-0" id="itensCarrinho">
+                <div class="row mr-0 ml-0 hiden" id="itensCarrinho">
                     <div class="col-12 item-carrinho">
                         <div class="img-produto">
                             <img src="./img/cardapio/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg">
@@ -412,16 +412,123 @@
                             <span class="btn-mais"><i class="fas fa-plus"></i></span>
                             <span class="btn btn-remove"><i class="fas fa-times"></i></span>
                         </div>
-                        
+                    
                     </div>
                 </div>
                 <div class="row mr-0 ml-0 hiden" id="localEntrega">
-                    
+                    <div class="col-4">
+                        <div class="form-group container-cep">
+                            <label>CEP:</label>
+                            <input type="text" id="txtCep" class="form-control">
+                            <a class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Endereço:</label>
+                            <input id="txtEndereço" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Bairro:</label>
+                            <input id="txtBairro" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>Número:</label>
+                            <input id="txtNumero" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Cidade:</label>
+                            <input id="txtCidade" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Complemento:</label>
+                            <input id="txtComplemento" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>UF:</label>
+                            <select id="ddlUF" class="form-control">
+                                <option value="-1">...</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="row mr-0 ml-0 hiden" id="resumoCarrinho">
-                    
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4"><b>Itens do pedido:</b></p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row" id="listaItensResumo">
+                            <div class="col-12 item-carrinho resumo">
+                                <div class="img-produto-resumo">
+                                    <img src="./img/cardapio/burguers/le-big-matt-kit-for-6.1ddae6e382bb3218eeb0fd5247de115a.jpg">
+                                </div>
+                                <div class="dados-produto">
+                                    <p class="title-produto-resumo">
+                                        <b>Nome do produto</b>
+                                    </p>
+                                    <p class="price-produto-resumo">
+                                        <b>R$ 100,00</b>
+                                    </p>
+                                </div>
+                                <p class="quantidade-produto-resumo">
+                                    x <b>3</b>
+                                </p>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4"><b>Local da entrega:</b></p>
+                    </div>
+                    <div class="col-12 item-carrrinho resumo">
+                        <div class="img-map">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="dados-produto">
+                            <p class="texto-endereco"><b id="resumoEndereco">Rua teste,200, bairro teste</b></p>
+                            <p class="cidade-endereco" id="cidadeEndereco">Cidade-CE / 60440-104</p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
         <div class="m-footer">
