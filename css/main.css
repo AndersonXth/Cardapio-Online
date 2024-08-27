@@ -480,7 +480,7 @@ footer{
     justify-content: end;
 }
 
-/*.modal-full{
+.modal-full{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -493,7 +493,7 @@ footer{
     flex-direction: column;
     display: flex;
     z-index: 9990;
-}*/
+}
 
 .m-header{
     padding-bottom: 20px;
