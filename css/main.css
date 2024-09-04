@@ -51,6 +51,7 @@ a.navbar-brand {
 
 .btn-icon{
     padding-right: 75px;
+    
 }
 
 .btn-icon .icon{
@@ -59,13 +60,14 @@ a.navbar-brand {
     background-color: var(--color-primary);
     width: 45px;
     height: 45px;
-    right:10px;
-    margin-left: 5px;
+    left: 15px;
+    margin-left: -10px;
     margin-top: -8px;
     margin-bottom: -8px;
     border-radius: 15px;
     text-align: center;
     padding-top: 6px;
+    position: relative;
 }
 
 .btn-white{
@@ -712,4 +714,60 @@ select.form-control{
 
 .resumo{
     display: flex;
+}
+
+.badge-total-carrinho{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: var(--color-secundary);
+    border-radius: 50px;
+    right: -5px;
+    top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-carrinho{
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    color: var(--color-black-heavy)!important;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.container-mensagens{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+}
+
+.toast{
+    color: var(--color-white);
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.toast.red{
+    background-color: var(--color-red);
+}
+
+.toast.green{
+    background-color: var(--color-green);
 }
