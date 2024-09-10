@@ -112,10 +112,67 @@ cardapio.metodos = {
     abrirCarrinho: (abrir) => {
         if(abrir) {
             $("#modalCarrinho").removeClass('hiden')
+            cardapio.metodos.carregarEtapa(1)
         } 
         else{
             $("#modalCarrinho").addClass('hiden') 
         }
+    },
+
+    carregarEtapa: (etapa) => {
+        if(etapa == 1){
+            $("#lblTituloEtapa").text('Seu carrinho');
+            $("#itensCarrinho").removeClass('hiden');
+            $("#localEntrega").addClass('hiden');
+            $("#resumoCarrinho").addClass('hiden');
+
+            $("etapa").removeClass('active');
+            $("etapa1").addClass('active');
+
+            $("#btnEtapaPedido").removeClass('hiden');
+            $("#btnEtapaEndereço").addClass('hiden');
+            $("#btnEtapaResumo").addClass('hiden');
+            $("#btnVoltar").addClass('hiden');
+        };
+
+
+        if(etapa == 2){
+            $("#lblTituloEtapa").text('Endereço de enterga');
+            $("#itensCarrinho").addClass('hiden');
+            $("#localEntrega").removeClass('hiden');
+            $("#resumoCarrinho").addClass('hiden');
+
+            $(".etapa").removeClass('active');
+            $(".etapa1").addClass('active');
+            $(".etapa2").addClass('active');
+
+            $("#btnEtapaPedido").addClass('hiden');
+            $("#btnEtapaEndereço").removeClass('hiden');
+            $("#btnEtapaResumo").addClass('hiden');
+            $("#btnVoltar").removeClass('hiden');
+        };
+
+        if(etapa == 3){
+            $("#lblTituloEtapa").text('Resumo do pedido');
+            $("#itensCarrinho").addClass('hiden');
+            $("#localEntrega").addClass('hiden');
+            $("#resumoCarrinho").removeClass('hiden');
+
+            $(".etapa").removeClass('active');
+            $(".etapa1").addClass('active');
+            $(".etapa2").addClass('active');
+            $(".etapa3").addClass('active');
+
+            $("#btnEtapaPedido").addClass('hiden');
+            $("#btnEtapaEndereço").addClass('hiden');
+            $("#btnEtapaResumo").removeClass('hiden');
+            $("#btnVoltar").removeClass('hiden');
+        };
+    },
+
+    voltarEtapa: () => {
+        let etapa = $(".etapa.active").length
+        cardapio.metodos.carregarEtapa(etapa - 1)
     },
 
     mensagem: (texto,cor = "red", tempo = 3500) => {

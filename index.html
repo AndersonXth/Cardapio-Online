@@ -56,7 +56,7 @@
                             Aproveite o nosso cardápio! Escolha o que desejar e recebe em sua casa de forma simples e segura. 
                         </p>
                         <div>
-                            <a class="btn btn-yellow mt-4 mr-3">
+                            <a class="btn btn-yellow mt-4 mr-3" href="#cardapio">
                                 Ver Cardápio
                             </a>
                             <a href="#" class="btn btn-white btn-icon-left mt-4">
@@ -426,7 +426,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mr-0 ml-0" id="resumoCarrinho">
+                <div class="row mr-0 ml-0 hiden" id="resumoCarrinho">
                     <div class="col-12">
                         <p class="title-carrinho mt-4"><b>Itens do pedido:</b></p>
                     </div>
@@ -481,10 +481,10 @@
                         <span class="valor-total" id="lblValorTotal"><b>R$ 100,00</b></span>
                     </p>
                 </div>
-                <a class="btn btn-yellow float-right" id="btnEtapaPedido">Continuar</a>
-                <a class="btn btn-yellow float-right hiden" id="btnEtapaEndereço">Revisar pedido</a>
+                <a class="btn btn-yellow float-right" onclick="cardapio.metodos.carregarEtapa(2)" id="btnEtapaPedido">Continuar</a>
+                <a class="btn btn-yellow float-right hiden" onclick="cardapio.metodos.carregarEtapa(3)" id="btnEtapaEndereço">Revisar pedido</a>
                 <a class="btn btn-yellow float-right hiden" id="btnEtapaResumo">Enviar pedido</a>
-                <a class="btn btn-white float-right mr-3 hiden" id="btnVoltar">Voltar</a>
+                <a class="btn btn-white float-right mr-3 hiden" onclick="cardapio.metodos.voltarEtapa()" id="btnVoltar">Voltar</a>
 
             </div>
         </div>
