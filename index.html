@@ -338,7 +338,7 @@
                         <div class="form-group container-cep">
                             <label>CEP:</label>
                             <input type="text" id="txtCep" class="form-control">
-                            <a class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+                            <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
                     <div class="col-8">
@@ -347,7 +347,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label>Endereço:</label>
-                            <input id="txtEndereço" type="text" class="form-control">
+                            <input id="txtEndereco" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="col-4">
@@ -415,23 +415,7 @@
                         <p class="title-carrinho mt-4"><b>Itens do pedido:</b></p>
                     </div>
                     <div class="col-12">
-                        <div class="row" id="listaItensResumo">
-                            <div class="col-12 item-carrinho resumo">
-                                <div class="img-produto-resumo">
-                                    <img src="./img/cardapio/burguers/le-big-matt-kit-for-6.1ddae6e382bb3218eeb0fd5247de115a.jpg">
-                                </div>
-                                <div class="dados-produto">
-                                    <p class="title-produto-resumo">
-                                        <b>Nome do produto</b>
-                                    </p>
-                                    <p class="price-produto-resumo">
-                                        <b>R$ 100,00</b>
-                                    </p>
-                                </div>
-                                <p class="quantidade-produto-resumo">
-                                    x <b>3</b>
-                                </p>
-                            </div>  
+                        <div class="row" id="listaItensResumo">  
                         </div>
                     </div>
                     <div class="col-12">
@@ -442,8 +426,8 @@
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <div class="dados-produto">
-                            <p class="texto-endereco"><b id="resumoEndereco">Rua teste,200, bairro teste</b></p>
-                            <p class="cidade-endereco" id="cidadeEndereco">Cidade-CE / 60440-104</p>
+                            <p class="texto-endereco"><b id="resumoEndereco"></b></p>
+                            <p class="cidade-endereco" id="cidadeEndereco"></p>
                         </div>
                     </div>
                 </div>
@@ -458,15 +442,15 @@
                     </p>
                     <p class="mb-0 texto-entrega">
                         <span><i class="fas fa-motorcycle"></i> Entrega:</span>
-                        <span id="lblValorEntrega">+ R$ 5,00</span>
+                        <span id="lblValorEntrega">+ R$ 0,00</span>
                     </p>
                     <p class="mb-0 texto-total">
                         <span><b>Total:</b></span>
-                        <span class="valor-total" id="lblValorTotal"><b>R$ 100,00</b></span>
+                        <span class="valor-total"><b id="lblValorTotal">R$ 0,00</b></span>
                     </p>
                 </div>
-                <a class="btn btn-yellow float-right" onclick="cardapio.metodos.carregarEtapa(2)" id="btnEtapaPedido">Continuar</a>
-                <a class="btn btn-yellow float-right hiden" onclick="cardapio.metodos.carregarEtapa(3)" id="btnEtapaEndereço">Revisar pedido</a>
+                <a class="btn btn-yellow float-right" onclick="cardapio.metodos.carregarEndereco()" id="btnEtapaPedido">Continuar</a>
+                <a class="btn btn-yellow float-right hiden" onclick="cardapio.metodos.resumoPedido()" id="btnEtapaEndereço">Revisar pedido</a>
                 <a class="btn btn-yellow float-right hiden" id="btnEtapaResumo">Enviar pedido</a>
                 <a class="btn btn-white float-right mr-3 hiden" onclick="cardapio.metodos.voltarEtapa()" id="btnVoltar">Voltar</a>
 
