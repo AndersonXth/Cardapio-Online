@@ -434,22 +434,22 @@
                         <p class="title-carrinho mt-4"><b>Forma de pagamento:</b></p>
                         <div class="col-12 forma-pagamento" id="formaPagamento">
                             <label class="custom-radio">
-                                <input type="radio" name="pagamento" value="debito" id="debito">
+                                <input type="radio" name="pagamento" value="Debito" id="debito">
                                 <span class="checkmark"></span>
                                 <b>Débito</b>
                             </label>
                             <label class="custom-radio">
-                                <input type="radio" name="pagamento" value="credito" id="credito">
+                                <input type="radio" name="pagamento" value="Credito" id="credito">
                                 <span class="checkmark"></span>
                                 <b>Crédito</b>
                             </label>
                             <label class="custom-radio">
-                                <input type="radio" name="pagamento" value="pix" id="pix">
+                                <input type="radio" name="pagamento" value="Pix" id="pix">
                                 <span class="checkmark"></span>
                                 <b>PIX</b>
                             </label>
                             <label class="custom-radio">
-                                <input type="radio" name="pagamento" value="dinheiro" id="dinheiro">
+                                <input type="radio" name="pagamento" value="Dinheiro" id="dinheiro">
                                 <span class="checkmark"></span>
                                 <b>Dinheiro</b>
                             </label>
@@ -476,7 +476,7 @@
                 </div>
                 <a class="btn btn-yellow float-right" onclick="cardapio.metodos.carregarEndereco()" id="btnEtapaPedido">Continuar</a>
                 <a class="btn btn-yellow float-right hiden" onclick="cardapio.metodos.resumoPedido()" id="btnEtapaEndereço">Revisar pedido</a>
-                <a href="#" class="btn btn-yellow float-right hiden" id="btnEtapaResumo" target="_blank">Enviar pedido</a>
+                <a class="btn btn-yellow float-right hiden" id="btnEtapaResumo" target="_blank" onclick="cardapio.metodos.finalizarPedido()">Enviar pedido</a>
                 <a class="btn btn-white float-right mr-3 hiden" onclick="cardapio.metodos.voltarEtapa()" id="btnVoltar">Voltar</a>
 
             </div>
