@@ -14,9 +14,11 @@ var VALOR_ENTREGA = 5
 
 var CELULAR_EMPRESA = '5585986586018'
 
+
 cardapio.eventos = {
     init: () => {
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarBotaoLigar();
     }
 };
 
@@ -146,7 +148,7 @@ cardapio.metodos = {
 
 
         if(etapa == 2){
-            $("#lblTituloEtapa").text('Endereço de enterga');
+            $("#lblTituloEtapa").text('Endereço de entrega');
             $("#itensCarrinho").addClass('hiden');
             $("#localEntrega").removeClass('hiden');
             $("#resumoCarrinho").addClass('hiden');
@@ -185,6 +187,7 @@ cardapio.metodos = {
     },
 
     carrergarCarrinho: () => {
+
         cardapio.metodos.carregarEtapa(1);
 
         if(MEU_CARRINHO.length > 0){
@@ -370,34 +373,50 @@ cardapio.metodos = {
 
         $("#resumoEndereco").html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.complemento}, ${MEU_ENDERECO.bairro}`);
         $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`);
-
-        cardapio.metodos.finalizarPedido();
     },
 
     finalizarPedido: () => {
-        if(MEU_CARRINHO.length > 0 && MEU_CARRINHO != null){
-            var texto = 'Olá, gostaria de fazer um pedido:';
-            texto += `\n*Itens do pedido:*\n\n\${itens}`;
-            texto += '\n*Endereço de entrega:*';
-            texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.complemento}, ${MEU_ENDERECO.bairro}`;
-            texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`;
-            texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}*`;
+        const pagamento = cardapio.metodos.formaPagamento()
+        if(pagamento){
+            if (MEU_CARRINHO.length > 0 && MEU_CARRINHO != null) {
+                var texto = 'Olá, gostaria de fazer um pedido:';
+                texto += `\n*Itens do pedido:*\n\n\${itens}`;
+                texto += '\n*Endereço de entrega:*';
+                texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.complemento}, ${MEU_ENDERECO.bairro}`;
+                texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`;
+                texto += `\n*Forma de pagamento:* ${pagamento}`; 
+                texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}*`;
+        
+                var itens = '';
+        
+                $.each(MEU_CARRINHO, (i, e) => {
+                    itens += `*${e.qntd}x* ${e.name} ........ R$: ${e.price.toFixed(2).replace('.', ',')} \n`;
+        
+                    if ((i + 1) == MEU_CARRINHO.length) {
+                        texto = texto.replace(/\${itens}/, itens);
+        
+                        let encode = encodeURI(texto);
+                        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+        
+                        $("#btnEtapaResumo").attr('href', URL);
+                    }
+                });
+            }
+        } else{
+            cardapio.metodos.mensagem("Por favor preencha forma de pagamento")
+        }
+        
+    },
 
-            var itens = '';
+    carregarBotaoLigar: () => {
+        $("#btnLigar").attr('href', `tel: ${CELULAR_EMPRESA}`)
+    },
 
-            $.each(MEU_CARRINHO, (i, e) =>{
-                itens += `*${e.qntd}x* ${e.name} ........ R$: ${e.price.toFixed(2).replace('.',',')} \n`;
-
-                if((i + 1) == MEU_CARRINHO.length) {
-                    texto = texto.replace(/\${itens}/, itens);
-
-                    let encode = encodeURI(texto);
-                    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
-
-                    $("#btnEtapaResumo").attr('href', URL);
-                } 
-            })
-        } 
+    formaPagamento: () => { // falta acrescentar a verificação caso o cliente não selecione //
+        const formaPagamentoSelecionada = document.querySelector("input[name='pagamento']:checked")
+        if(formaPagamentoSelecionada){
+            return formaPagamentoSelecionada.value
+        }
     },
 
     mensagem: (texto,cor = "red", tempo = 3500) => {
