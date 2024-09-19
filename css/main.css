@@ -459,6 +459,7 @@ a.navbar-brand {
 
 footer{
     background-color: var(--color-secundary);
+    margin-top: 50px;
 }
 
 .logo-footer{
@@ -789,4 +790,24 @@ select.form-control{
     margin: 0 auto;
     border-radius: 50px;
     margin-bottom: 10px;
+}
+
+.forma-pagamento input{
+    display: block;
+    justify-content: center;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    border-radius: 50px;
+}
+
+.forma-pagamento label{
+    display: flex;
+    align-items: center;
+    caret-color: transparent;
+}
+
+.forma-pagamento b{
+    font-size: 18px;
 }
