@@ -251,17 +251,26 @@ cardapio.metodos = {
         $("#lblSubTotal").text("R$ 0,00");
         $("#lblValorEntrega").text("+ R$ 0,00");
         $("#lblValorTotal").text("R$ 0,00");
-        
+
+        const opcaoEntrega = cardapio.metodos.opcaoEntrega()
+
+        let valorEntrega = 0
+        if(opcaoEntrega == "entrega"){
+            valorEntrega = VALOR_ENTREGA;
+        } else {
+            valorEntrega = 0;
+        }
 
         $.each(MEU_CARRINHO,(i, e) => {
             VALOR_CARRINHO += parseFloat(e.price * e.qntd)
 
             if((i + 1) == MEU_CARRINHO.length){
-                $("#lblSubTotal").text(`R$ ${VALOR_CARRINHO.toFixed(2).replace('.',',')}`);
-                $("#lblValorEntrega").text(`+ R$ ${VALOR_ENTREGA.toFixed(2).replace('.',',')}`);
-                $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}`);
+                    $("#lblSubTotal").text(`R$ ${VALOR_CARRINHO.toFixed(2).replace('.',',')}`);
+                    $("#lblValorEntrega").text(`+ R$ ${valorEntrega.toFixed(2).replace('.',',')}`);
+                    $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + valorEntrega).toFixed(2).replace('.',',')}`);
             }
         })
+
 
     },
 
@@ -329,6 +338,7 @@ cardapio.metodos = {
             }
             cardapio.metodos.carregarEtapa(3)
             cardapio.metodos.carregarResumo()
+            cardapio.metodos.carregarValores()
         }
 
         if(opcaoEntrega == 'entrega'){
@@ -375,6 +385,7 @@ cardapio.metodos = {
 
             cardapio.metodos.carregarEtapa(3)
             cardapio.metodos.carregarResumo()
+            cardapio.metodos.carregarValores()
         } 
         
         if(opcaoEntrega != "retirada" && opcaoEntrega != "entrega") {
@@ -448,7 +459,7 @@ cardapio.metodos = {
                     texto += `\n*Itens do pedido:*\n\n\${itens}`;
                     texto += '\n*Endereço de entrega: Retirada na loja*';
                     texto += `\n*Forma de pagamento:* ${pagamento}`; 
-                    texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}*`;
+                    texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO).toFixed(2).replace('.', ',')}*`;
             
                     var itens = '';
             
@@ -479,7 +490,7 @@ cardapio.metodos = {
         $("#btnLigar").attr('href', `tel: ${CELULAR_EMPRESA}`)
     },
 
-    formaPagamento: () => { // falta acrescentar a verificação caso o cliente não selecione //
+    formaPagamento: () => {
         const formaPagamentoSelecionada = document.querySelector("input[name='pagamento']:checked")
         if(formaPagamentoSelecionada){
             return formaPagamentoSelecionada.value
@@ -492,15 +503,6 @@ cardapio.metodos = {
             return opcaoEntregaSelecionada.value
         }
     },
-
-    // valorEntrega: () => {
-    //     const opcaoEntrega = cardapio.metodos.opcaoEntrega()
-    //     if(opcaoEntrega == "entrega"){
-    //         VALOR_ENTREGA == 5
-    //     } else {
-    //         VALOR_ENTREGA == 0
-    //     }
-    // },
 
     mensagem: (texto,cor = "red", tempo = 3500) => {
         let id = Math.floor(Date.now() * Math.random()).toString();
