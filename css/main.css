@@ -811,3 +811,24 @@ select.form-control{
 .forma-pagamento b{
     font-size: 18px;
 }
+
+.container-entrega{
+    justify-content: center;
+    align-items: center;
+}
+
+.container-entrega label{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.container-entrega b{
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.container-entrega input{
+    width: 15px;
+    height: 15px;
+    
+}
