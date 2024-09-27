@@ -583,6 +583,7 @@ footer{
     font-size: 20px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
     margin-bottom: 0;
 }
 

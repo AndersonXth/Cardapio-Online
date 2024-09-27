@@ -2,11 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv=" X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/fontawesome.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/responsivo.css">
     <title>Restaurante - Seja Bem vindo</title>
 </head>
 <body>
@@ -20,7 +22,7 @@
 
     <section class="header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg pr-0 pl-0">
+            <nav class="navbar navbar-expand-lg pr-0 pl-0 col-one">
                 <a class="navbar-brand" href='#'>
                     <img src="./img/logo.png" width="160" class="img-logo">
                 </a>
@@ -49,7 +51,7 @@
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one">
                     <div class="d-flex text-banner">
                         <h1><b>Escolha sua comida <b class="color-primary">favorita.</b></b></h1>
                         <p>
@@ -77,7 +79,7 @@
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
-                <div class="col-6">
+                <div class="col-6 no-mobile">
                     <div class="card-banner"></div>
                     <div class="d-flex img-banner">
                         <img src="img/burguer.png">
@@ -101,11 +103,11 @@
         <div class="background-servicos"></div>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 col-one text-center mb-5">
                     <span class="hint-title"><b>Serviços</b></span>
                     <h1 class="title"><b>Como são nossos serviços ?</b></h1>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                     <div class="card-icon text-center">
                         <img src="img/icone-pedido.svg" width="150">
                     </div>
@@ -116,7 +118,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                     <div class="card-icon text-center">
                         <img src="img/icone-delivery.svg" width="250">
                     </div>
@@ -127,7 +129,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                     <div class="card-icon text-center">
                         <img src="img/icone-qualidade.svg" width="250">
                     </div>
@@ -145,11 +147,11 @@
         <div class="background-cardapio"></div>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 col-one text-center mb-5">
                     <span class="hint-title"><b>Cardápio</b></span>
                     <h1 class="title"><b>Conheça o nosso cardápio</b></h1>
                 </div>
-                <div class="col-12 container-menu">
+                <div class="col-12 col-one container-menu">
                     <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')"><i class="fas fa-hamburger"></i>&nbsp;Burgers</a>
                     <a id="menu-pizzas"  class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')"><i class="fas fa-pizza-slice"></i>&nbsp;Pizzas</a>
                     <a id="menu-churrasco"  class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('churrasco')"><i class="fas fa-drumstick-bite"></i>&nbsp;Churrasco</a>
@@ -158,11 +160,11 @@
                     <a id="menu-sobremesas"  class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('sobremesas')"><i class="fas fa-ice-cream"></i>&nbsp;Sobremesas</a>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 col-one">
                     <div class="row" id="itensCardapio">
                     </div>
                 </div>
-                <div class="col-12 text-center">
+                <div class="col-12 col-one text-center">
                     <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">Ver mais</a>
                 </div>
             
@@ -176,13 +178,13 @@
         <div class="background-depoimento"></div>
         <div class="container">
             <div class="row">
-                <div class="col-5 text-center">
+                <div class="col-5 no-mobile text-center">
                     <div class="card-depoimentos"></div>
                     <div class="d-flex img-banner">
                         <img src="./img/pizzas.png">
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-12 col-lg-7 col-md-7 col-sm-12 col-one">
                     <span class="hint-title"><b>Depoimentos</b></span>
                     <h1 class="title"><b>O que dizem sobre nós ?</b></h1>
                     <div class="mb-5">
@@ -292,15 +294,15 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-3 container-logo-footer">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one container-logo-footer">
                     <img class="logo-footer" src="./img/logo.png">
                 </div>
-                <div class="col-6 container-texto-footer">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one container-texto-footer">
                     <p class="mb-0">
                         <b>Menu On-Line</b>&copy; Todos os direitos reservados
                     </p>
                 </div>
-                <div class="col-3 container-redes-footer">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one container-redes-footer">
                     <a class="btn btn-sm btn-white btn-social mr-3">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -336,52 +338,52 @@
                 <div class="row mr-0 ml-0 hiden" id="localEntrega">
                     <div class="col-12">
                         <div class="form-group container-entrega" id="container-entrega">
-                            <label>Opções de entrega:</label>
+                            <label>Opções de entrega:</label><br>
                             <input type="radio" name="opcaoEntrega" value="retirada" id="retirada"><b>Retirada</b>
                             <input type="radio" name="opcaoEntrega" value="entrega" id="entrega"><b>Entrega</b>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
                         <div class="form-group container-cep">
                             <label>CEP:</label>
                             <input type="text" id="txtCep" class="form-control">
                             <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-8 no-mobile">
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Endereço:</label>
                             <input id="txtEndereco" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
                         <div class="form-group">
                             <label>Bairro:</label>
                             <input id="txtBairro" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
                         <div class="form-group">
                             <label>Número:</label>
                             <input id="txtNumero" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Cidade:</label>
                             <input id="txtCidade" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
                         <div class="form-group">
                             <label>Complemento:</label>
                             <input id="txtComplemento" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
                         <div class="form-group">
                             <label>UF:</label>
                             <select id="ddlUF" class="form-control">
